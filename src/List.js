@@ -1,14 +1,17 @@
 import { useState } from "react"
 
+// --- В форме будет храниться состояние Input
 function List({ addTask }) {
     const [userInput, setUserInput] = useState('')
+    
+    // --- Если значение input будет меняться
     const handleChange = (e) => {
         setUserInput(e.currentTarget.value)
     }
     const handleSubmit = (e) => {
         e.preventDefault()
         addTask(userInput)
-        setUserInput("")
+        setUserInput("") // --- Очистка input после добаления задачи
     }
     const handleKeyPress = (e) => {
         if(e.key === "Enter") {

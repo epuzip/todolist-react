@@ -1,16 +1,16 @@
 import { Trash } from "@phosphor-icons/react"
 import { useState } from "react"
-import styles from './index.scss'
 
+// --Элемент списка
 function ListItem({ task, toggleTask, removeTask }) {
     const [showTrash, setShowTrash] = useState(false);
 
     const onMouseEnterHandler = () => {
-    setShowTrash(true);
+        setShowTrash(true);
     };
 
     const onMouseLeaveHandler = () => {
-    setShowTrash(false);
+        setShowTrash(false);
     };
 
     return (
@@ -18,7 +18,6 @@ function ListItem({ task, toggleTask, removeTask }) {
             <div
                 className={task.complete ? "flex justify-center items-center bg-rose-500 h-14 w-3/5 text-gray-800 text-xl line-through font-bold rounded ease-linear duration-700 shadow-sm" : "flex justify-center items-center h-14 w-3/5 text-xl rounded shadow-sm bg-emerald-200 text-gray-800 border border-r-gray-200"}
                 onClick={() => toggleTask(task.id)}
-                
             >
                 {task.task}
             </div>
